@@ -1,0 +1,36 @@
+version: "3.8"
+services:
+  captcha_service:
+    build: .
+    ipc: "host"
+    restart: always
+    container_name: captcha_service
+    ports:
+      - "11013:11013"
+    volumes:
+      - .:/app
+      - images:/images
+      - cache:/root/.cache
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities:
+                - gpu
+    environment:
+      - VERSION=latest
+      - NVIDIA_VISIBLE_DEVICES=0
+      - NVIDIA_DRIVER_CAPABILITIE=all
+    entrypoint: tail -f "/dev/null"
+
+volumes:
+  cache:
+    external: true
+  images:
+    driver: local
+    driver_opts:
+      device: :/volume1/images
+      o: addr=0.0.0.0,rw,noac,vers=4
+      type: nfs
+
+     

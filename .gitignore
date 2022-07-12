@@ -1,0 +1,10 @@
+.idea/
+venv/
+trash/
+face/
+*__pycache__*
+*.pyc
+*.DS_Store
+log.txt
+*debug*
+nohup.out

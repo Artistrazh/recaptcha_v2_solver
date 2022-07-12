@@ -1,0 +1,14 @@
+# Config file with all pathes in project
+
+synonyms_file_path: /app/src/synonyms.json
+
+custom_yolo_weights: '/app/weights/v3_12_best.pt'
+yolov3_path: '/app/src/yolov3/'
+
+base_model_path: '/app/weights/BLIP_weights/model*_base_caption.pth'
+large_model_path: '/app/weights/BLIP_weights/model_large_caption.pth'
+
+glove_25: '/app/weights/glove.twitter.27B.25d.txt'
+glove_50: '/app/weights/glove.twitter.27B.50d.txt'
+glove_100: '/app/weights/glove.twitter.27B.100d.txt'
+glove_200: '/app/weights/glove.twitter.27B.200d.txt'
